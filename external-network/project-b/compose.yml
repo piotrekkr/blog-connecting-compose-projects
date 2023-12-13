@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app:
+    image: nginx
+    networks:
+      default:
+      project-a-b-network:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+networks:
+  project-a-b-network:
+    external: true
